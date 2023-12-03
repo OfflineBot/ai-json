@@ -60,4 +60,56 @@ where
         let out: MnistData<T> = serde_json::from_str(&buffer).unwrap();
         out
     }
+
+    pub fn min_len(&self) -> usize {
+        let output = self.output;
+        let mut min_val = usize::MAX;
+
+        if output.pic_0.len() < min_val {
+            min_val = output.pic_0.len();
+        }
+
+        if output.pic_1.len() < min_val {
+            min_val = output.pic_1.len();
+        }
+        if output.pic_2.len() < min_val {
+            min_val = output.pic_2.len();
+        }
+        if output.pic_3.len() < min_val {
+            min_val = output.pic_3.len();
+        }
+        if output.pic_4.len() < min_val {
+            min_val = output.pic_4.len();
+        }
+        if output.pic_5.len() < min_val {
+            min_val = output.pic_5.len();
+        }
+        if output.pic_6.len() < min_val {
+            min_val = output.pic_6.len();
+        }
+        if output.pic_7.len() < min_val {
+            min_val = output.pic_7.len();
+        }
+        if output.pic_8.len() < min_val {
+            min_val = output.pic_8.len();
+        }
+        if output.pic_9.len() < min_val {
+            min_val = output.pic_9.len();
+        }
+       
+        min_val
+    }
+
+    pub fn combine(&self, count: usize) -> (Vec<Vec<T>>, Vec<Vec<T>>) {
+        let min_len = self.min_len();
+        if count > min_len {
+            println!("There are not enough pictures for given count! continueing with: {}", min_len);
+        }
+
+        let input_vec: Vec<Vec<T>> = vec![];
+        let output_vec: Vec<Vec<T>> = vec![];
+        
+
+        (input_vec, output_vec)
+    }
 }
