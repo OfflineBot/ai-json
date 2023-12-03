@@ -50,7 +50,7 @@ where
         file.write_all(out_str.as_bytes()).unwrap();
     }
 
-    pub fn load(path: &str) -> MnistData<T> {
+    pub fn read(path: &str) -> MnistData<T> {
         let mut file = match File::open(path) {
             Ok(data) => data,
             Err(_) => panic!("Could not open File!")
