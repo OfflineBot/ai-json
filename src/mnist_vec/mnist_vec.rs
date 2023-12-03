@@ -24,7 +24,7 @@ pub struct MnistData<T> {
 
 impl<T> MnistData<T> 
 where
-    T: for<'a> Deserialize<'a>
+    T: for<'a> Deserialize<'a> + Clone
 {
     pub fn empty(path: &str) {
         let mut file = match File::create(path) {
@@ -62,7 +62,7 @@ where
     }
 
     pub fn min_len(&self) -> usize {
-        let output = self.output;
+        let output = self.output.clone();
         let mut min_val = usize::MAX;
 
         if output.pic_0.len() < min_val {
