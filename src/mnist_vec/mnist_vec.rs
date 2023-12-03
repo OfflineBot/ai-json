@@ -105,6 +105,8 @@ where
         if count > min_len {
             min_len = count;
             println!("There are not enough pictures for given count! continueing with: {}", min_len);
+        } else {
+            min_len = count;
         }
 
         let mut input_vec: Vec<Vec<T>> = vec![];
