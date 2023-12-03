@@ -101,14 +101,55 @@ where
     }
 
     pub fn combine(&self, count: usize) -> (Vec<Vec<T>>, Vec<Vec<T>>) {
-        let min_len = self.min_len();
+        let mut min_len = self.min_len();
         if count > min_len {
+            min_len = count;
             println!("There are not enough pictures for given count! continueing with: {}", min_len);
         }
 
-        let input_vec: Vec<Vec<T>> = vec![];
-        let output_vec: Vec<Vec<T>> = vec![];
+        let mut input_vec: Vec<Vec<T>> = vec![];
+        let mut output_vec: Vec<Vec<T>> = vec![];
         
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_0[i].clone());
+            output_vec.push(self.output.pic_0[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_1[i].clone());
+            output_vec.push(self.output.pic_1[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_2[i].clone());
+            output_vec.push(self.output.pic_2[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_3[i].clone());
+            output_vec.push(self.output.pic_3[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_4[i].clone());
+            output_vec.push(self.output.pic_4[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_5[i].clone());
+            output_vec.push(self.output.pic_5[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_6[i].clone());
+            output_vec.push(self.output.pic_6[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_7[i].clone());
+            output_vec.push(self.output.pic_7[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_8[i].clone());
+            output_vec.push(self.output.pic_8[i].clone());
+        }
+        for i in 0..min_len {
+            input_vec.push(self.input.pic_9[i].clone());
+            output_vec.push(self.output.pic_9[i].clone());
+        }
 
         (input_vec, output_vec)
     }
